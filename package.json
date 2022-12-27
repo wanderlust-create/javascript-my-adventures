@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
     "migrate": "knex migrate:latest"
   },
   "keywords": [],
