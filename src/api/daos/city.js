@@ -1,7 +1,5 @@
 const logger = require("../../utils/logger");
 const City = require("../models/cities");
-const Cities = require("../models/cities");
-
 class CityDAO {
   async listAllCities() {
     return City.query()

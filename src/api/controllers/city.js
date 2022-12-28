@@ -16,6 +16,7 @@ class CityController {
       res.status(500).json(err);
     }
   }
+
   async getCityById(req, res, next) {
     try {
       const city = await cityService.getCityById(req.params.id);
@@ -30,6 +31,7 @@ class CityController {
       res.status(500).json(err);
     }
   }
+  
   async createCity(req, res, next) {
     try {
       const city = await cityService.createCity(req.body);
