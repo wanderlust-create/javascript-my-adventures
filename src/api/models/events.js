@@ -8,9 +8,9 @@ class Event extends Model {
   static get relationMappings() {
     const Cities = require("./cities");
     return {
-      cities: {
+      city: {
         relation: Model.BelongsToOneRelation,
-        filter: (query) => query.select("name"),
+        filter: (query) => query.select("name", "country"),
         modelClass: Cities,
         join: {
           from: "event.cityId",

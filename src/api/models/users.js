@@ -7,11 +7,11 @@ class User extends Model {
   static get relationMappings() {
     const Cities = require("./cities");
     return {
-      cities: {
+      city: {
         relation: Model.ManyToManyRelation,
-        modelClass: Cities,
+        modelClass: City,
         filter: (query) =>
-          query.select("name", "travelType", "startDate", "endDate"),
+          query.select("name", "country"),
         join: {
           from: "user.id",
           through: {
