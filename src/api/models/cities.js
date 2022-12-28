@@ -12,7 +12,7 @@ class City extends Model {
       events: {
         relation: Model.HasManyRelation,
         modelClass: Events,
-        filter: (query) => query.select("id", "title", "date"),
+        filter: (query) => query.select("id", "title"),
         join: {
           from: "event.cityId",
           to: "city.id",
