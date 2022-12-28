@@ -48,17 +48,17 @@
     "city": "San Francisco",
     "country": "USA"
   },
-  { "title": "Cais da Ribeira", "city": "Porto", "country": "the Portugal" },
-  { "title": "Palacio da Bolsa", "city": "Porto", "country": "the Portugal" },
+  { "title": "Cais da Ribeira", "city": "Porto", "country": "Portugal" },
+  { "title": "Palacio da Bolsa", "city": "Porto", "country": "Portugal" },
   {
     "title": "Porto Cathedral (Se Catedral)",
     "city": "Porto",
-    "country": "the Portugal"
+    "country": "Portugal"
   },
   {
     "title": "Igreja de São Francisco",
     "city": "Porto",
-    "country": "the Portugal"
+    "country": "Portugal"
   },
   { "title": "Capela das Almas", "city": "Porto", "country": "the Portugal" },
   {
