@@ -6,6 +6,7 @@ const api = require("./api");
 
 // .env variables
 const config = require("./config");
+const logger = require("./utils/logger");
 
 // set up database with objection and knex
 setupDb();
@@ -16,11 +17,11 @@ app.use(api);
 
 app.listen(config.PORT, (err) => {
   if (err) {
-    console.log(err);
+    logger.error(err);
     process.exit(1);
     return;
   }
-  console.log(`
+  logger.info(`
       %%%% 👍  API REST Server listening on http://localhost:${config.PORT} 👍 %%%%
     `);
 });
