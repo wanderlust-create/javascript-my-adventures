@@ -18,13 +18,13 @@ const eventDto = require("../reqBodyValidation/dtos/event");
  *       type: object
  *       required:
  *         - id
- *         - cityId
+ *         - city_id
  *         - title
  *       properties:
  *         id:
  *           type: number
  *           description: The auto-generated id of the event
- *         cityId:
+ *         city_id:
  *           type: number
  *           description: The foreign key for the city
  *         title: 
