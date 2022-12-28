@@ -16,7 +16,6 @@ class CityDAO {
   }
 
   async createCity(cityDto) {
-    logger.info("DAO", cityDto);
     const newCity = await City.query().insert({
       name: cityDto.name,
       country: cityDto.country,
