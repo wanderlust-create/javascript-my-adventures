@@ -11,9 +11,6 @@ exports.up = function (knex) {
       table.increments("id").primary();
       table.string("name", 100).notNullable();
       table.string("country", 100).notNullable();
-      table.string("travelType", 100).notNullable();
-      table.date("startDate").notNullable();
-      table.date("endDate").notNullable();
       table.timestamps(true, true);
     })
     .createTable("event", (table) => {
@@ -26,8 +23,6 @@ exports.up = function (knex) {
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
       table.string("title").notNullable();
-      table.date("date").notNullable();
-      table.string("description");
       table.timestamps(true, true);
     })
     .createTable("userCity", (table) => {
