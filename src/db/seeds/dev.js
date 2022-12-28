@@ -63,7 +63,7 @@ const createCity = (knex, city) => {
   });
   return knex("city").insert({
     name: city,
-    country: countryName,
+    country: countryName.country,
   });
 };
 
