@@ -4,12 +4,12 @@ const cityService = require("../services/city");
 class CityController {
   async listAllCities(req, res, next) {
     try {
-      const citys = await cityService.listAllCities();
-      if (!citys) {
+      const cities = await cityService.listAllCities();
+      if (!cities) {
         res.sendStatus(404);
         return;
       } else {
-        res.json(citys);
+        res.json(cities);
       }
     } catch (err) {
       logger.error(err);
@@ -35,7 +35,6 @@ class CityController {
   async createCity(req, res, next) {
     try {
       const city = await cityService.createCity(req.body);
-      logger.info("Controller", city);
       res.json(city);
     } catch (err) {
       logger.error(err);

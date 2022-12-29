@@ -5,7 +5,6 @@ class CityDAO {
     return City.query()
       .column("id", "name", "country")
       .orderBy("created_at", "desc")
-      .withGraphFetched("events");
   }
 
   async getCityById(id) {
