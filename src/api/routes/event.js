@@ -18,13 +18,13 @@ const eventDto = require("../reqBodyValidation/dtos/event");
  *       type: object
  *       required:
  *         - id
- *         - cityId
+ *         - city_id
  *         - title
  *       properties:
  *         id:
  *           type: number
  *           description: The auto-generated id of the event
- *         cityId:
+ *         city_id:
  *           type: number
  *           description: The foreign key for the city
  *         title: 
@@ -157,7 +157,7 @@ router.patch("/api/v1/event/:id", event.updateEventById);
  * @swagger
  * /api/v1/event/{id}:
  *   delete:
- *     summary: Remove the event by id
+ *     summary: Delete the event by id
  *     tags: [Events]
  *     parameters:
  *       - in: path

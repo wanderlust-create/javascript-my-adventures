@@ -1,6 +1,6 @@
 const yup = require("yup");
 
 module.exports = yup.object().shape({
-  title: yup.string().trim().required(),
+  user_id: yup.number().required(),
   city_id: yup.number().required(),
 });

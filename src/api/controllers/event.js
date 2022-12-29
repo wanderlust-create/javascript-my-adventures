@@ -50,7 +50,6 @@ class EventController {
 
   async filterEventsByUserId(req, res, next) {
     try {
-      logger.debug(`CONTROLLER: ${req.params.user_id}`);
       let userId = req.params.user_id;
       const events = await eventService.filterEventsByUserId(userId);
       if (!events) {
