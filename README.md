@@ -35,7 +35,7 @@
 - `src/config` databse access & access to .env configuration variables
 - `src/db` migration, seed, & seed source data
 - `src/docs` postman import API docs
-- `src/utils` logger & setup
+- `src/utils` logger & swagger setup
 
 ----------
 ## 💻 Setup  <a name = "setup"></a>
