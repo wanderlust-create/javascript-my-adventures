@@ -64,7 +64,7 @@
 
 ----------
 ## 🗺 Schema  <a name = "schema"></a>
-![csa-schema](https://user-images.githubusercontent.com/67713820/209891039-383dd078-95bb-47b7-a63b-5c4c653b3601.png)
+![csa-schema](https://user-images.githubusercontent.com/67713820/209966291-29992855-b2c0-4401-86ae-29720e39fb08.png)
 
 ----------
 ## 💼 API Documentation  <a name = "api-docs"></a>
