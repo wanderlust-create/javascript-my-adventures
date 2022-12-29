@@ -9,12 +9,6 @@ class UserDAO {
       .orderBy("created_at", "desc");
   }
 
-  async listAllUserCities() {
-    return UserCity.query()
-      .column("id", "city_id", "user_id")
-      .orderBy("created_at", "desc");
-  }
-
   async getUserById(id) {
     return User.query()
       .findById(id)
@@ -29,14 +23,6 @@ class UserDAO {
       lastName: userDto.last_name,
     });
     return newUser;
-  }
-
-  async createUserCity(userCityDto) {
-    const newUserCity = await UserCity.query().insert({
-      userId: userCityDto.user_id,
-      cityId: userCityDto.city_id,
-    });
-    return newUserCity;
   }
 
   async updateUserById(id, userDto) {
@@ -57,6 +43,21 @@ class UserDAO {
       .where({ id })
       .returning("*");
     return deletedUser;
+  }
+  /* User-City Routes */
+
+  async listAllUserCities() {
+    return UserCity.query()
+      .column("id", "city_id", "user_id")
+      .orderBy("created_at", "desc");
+  }
+
+  async createUserCity(userCityDto) {
+    const newUserCity = await UserCity.query().insert({
+      userId: userCityDto.user_id,
+      cityId: userCityDto.city_id,
+    });
+    return newUserCity;
   }
 
   async deleteUserCityById(id) {

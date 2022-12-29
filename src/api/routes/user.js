@@ -220,7 +220,7 @@ router.delete("/api/v1/user/:id", user.deleteUserById);
  *     tags: [User-City]
  *     responses:
  *       200:
- *         description: List of all of the user_cities
+ *         description: List of all of the user_cities on joins table
  *         content:
  *           application/json:
  *             schema:

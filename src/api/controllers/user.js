@@ -71,7 +71,7 @@ class UserController {
     }
   }
 
-  // User-City routes
+  /* User-City Routes */
   async listAllUserCities(req, res, next) {
     try {
       const userCities = await userService.listAllUserCities();
