@@ -1,0 +1,784 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "My Adventures JS REST API docs",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9000"
+    }
+  ],
+  "paths": {
+    "/api/v1/city": {
+      "get": {
+        "summary": "Returns an array of all the cities",
+        "tags": ["Cities"],
+        "responses": {
+          "200": {
+            "description": "List of all the cities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/City"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new city",
+        "tags": ["Cities"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/City"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The city was successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/City"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/city/{id}": {
+      "get": {
+        "summary": "Get the city details by id",
+        "tags": ["Cities"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The city id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The city description by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/City"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update the city by the id",
+        "tags": ["Cities"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The city id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/City"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The city was updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/City"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove the city by id",
+        "tags": ["Cities"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The city id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The city was deleted"
+          },
+          "404": {
+            "description": "The city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/event": {
+      "get": {
+        "summary": "Returns an array of all the events",
+        "tags": ["Events"],
+        "responses": {
+          "200": {
+            "description": "List of all the events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Events"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new event",
+        "tags": ["Events"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Events"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The event was successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Events"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The event was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/event/{id}": {
+      "get": {
+        "summary": "Get the event details by id",
+        "tags": ["Events"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The event id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The event description by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Events"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The event was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update the event by the id",
+        "tags": ["Events"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The event id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Events"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The event was updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Events"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The event was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the event by id",
+        "tags": ["Events"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The event id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The event was deleted"
+          },
+          "404": {
+            "description": "The event was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/events_by_city/{city_id}": {
+      "get": {
+        "summary": "Filter events by city",
+        "tags": ["Events"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "city_id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The city id used to filter shows"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The shows filtered by city",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Events"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/events_by_user/{user_id}": {
+      "get": {
+        "summary": "Filter events by user",
+        "tags": ["Events"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "Filter events by user id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The events filtered by user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Events"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The user was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/user": {
+      "get": {
+        "summary": "Returns an array of all the users",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "List of all of the users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Users"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new user",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Users"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The user was successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The user was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/user/{id}": {
+      "get": {
+        "summary": "Get the user details by id",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The user id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user description by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The user was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update the user by the id",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The user id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Users"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The user was updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The user was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the user by id",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The user id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user was deleted"
+          },
+          "404": {
+            "description": "The user was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/user_city": {
+      "get": {
+        "summary": "Returns an array of all the user_cities",
+        "tags": ["User-City"],
+        "responses": {
+          "200": {
+            "description": "List of all of the user_cities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserCity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Adds a city to a user",
+        "tags": ["User-City"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCitys"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The city was successfully added to the user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserCity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The user and/or city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/user_city/{id}": {
+      "delete": {
+        "summary": "Delete the user_city by id",
+        "tags": ["User-City"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "description": "The user_city id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user_city was deleted"
+          },
+          "404": {
+            "description": "The user_city was not found"
+          },
+          "500": {
+            "description": "An error occurred"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "City": {
+        "type": "object",
+        "required": ["id", "name", "country"],
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "The auto-generated id of the city"
+          },
+          "name": {
+            "type": "string",
+            "description": "The city name"
+          },
+          "country": {
+            "type": "string",
+            "description": "The country  the city is located in"
+          },
+          "shows": {
+            "type": "array",
+            "description": "An array of all events included in the city"
+          }
+        },
+        "example": {
+          "id": 4,
+          "name": "Porto",
+          "country": null,
+          "events": [
+            {
+              "id": 14,
+              "title": "Igreja de São Francisco\""
+            }
+          ]
+        }
+      },
+      "Events": {
+        "type": "object",
+        "required": ["id", "city_id", "title"],
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "The auto-generated id of the event"
+          },
+          "city_id": {
+            "type": "number",
+            "description": "The foreign key for the city"
+          },
+          "title": {
+            "type": "string",
+            "description": "The event title"
+          },
+          "city": {
+            "type": "array",
+            "description": "The city the event belongs to"
+          }
+        },
+        "example": {
+          "id": 23,
+          "title": "Van Gogh Museum",
+          "city": [
+            {
+              "name": "Amsterdam",
+              "country": "the Netherlands"
+            }
+          ]
+        }
+      },
+      "User": {
+        "type": "object",
+        "required": ["id", "email", "first_name", "last_name"],
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "The auto-generated id of the user"
+          },
+          "email": {
+            "type": "string",
+            "description": "The user's email"
+          },
+          "first_name": {
+            "type": "string",
+            "description": "the user's first name"
+          },
+          "last_name": {
+            "type": "string",
+            "description": "the user's last name"
+          },
+          "city": {
+            "type": "array",
+            "description": "cities the user has visited"
+          }
+        },
+        "example": {
+          "id": 2,
+          "first_name": "Sinead",
+          "last_name": "Seto",
+          "email": "Sinead@email.com",
+          "city": [
+            {
+              "name": "Delhi",
+              "country": "India"
+            }
+          ]
+        }
+      },
+      "UserCity": {
+        "type": "object",
+        "required": ["id", "user_id", "city_id"],
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "The auto-generated id of the user_city"
+          },
+          "user_id": {
+            "type": "number",
+            "description": "The user id to add to the joins table"
+          },
+          "city_id": {
+            "type": "number",
+            "description": "The city id to add to the joins table"
+          }
+        },
+        "example": {
+          "id": 16,
+          "user_id": 1,
+          "city_id": 12
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Cities",
+      "description": "My Adventure Cities"
+    },
+    {
+      "name": "Events",
+      "description": "My Adventure Events"
+    },
+    {
+      "name": "Users",
+      "description": "My Adventure Users"
+    },
+    {
+      "name": "User-City",
+      "description": "My Adventure User Citys"
+    }
+  ]
+}
