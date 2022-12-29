@@ -157,7 +157,7 @@ router.patch("/api/v1/event/:id", event.updateEventById);
  * @swagger
  * /api/v1/event/{id}:
  *   delete:
- *     summary: Remove the event by id
+ *     summary: Delete the event by id
  *     tags: [Events]
  *     parameters:
  *       - in: path

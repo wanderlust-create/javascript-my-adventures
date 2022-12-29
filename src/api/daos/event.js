@@ -1,3 +1,4 @@
+const logger = require("../../utils/logger");
 const Event = require("../models/events");
 const User = require("../models/users");
 
@@ -21,7 +22,6 @@ class EventDAO {
   }
 
   filterEventsByUserId(userId) {
-     logger.debug(`DAO" filterEventsByUserId, ${userId}`);
     return User.query()
       .findById(userId)
       .column("id", "first_name", "last_name")
@@ -31,7 +31,7 @@ class EventDAO {
   async createEvent(eventDto) {
     const newEvent = await Event.query().insert({
       title: eventDto.title,
-      city_id: eventDto.city_id,
+      cityId: eventDto.city_id,
     });
     return newEvent;
   }

@@ -1,3 +1,4 @@
+const logger = require("../../utils/logger");
 const eventDAO = require("../daos/event");
 
 class EventService {
@@ -11,7 +12,6 @@ class EventService {
     return eventDAO.filterEventsByCityId(cityId);
   }
   filterEventsByUserId(userId) {
-    logger.debug(`SERVICE: filterEventsByUserId, ${userId}`);
     return eventDAO.filterEventsByUserId(userId);
   }
   createEvent(eventDto) {
