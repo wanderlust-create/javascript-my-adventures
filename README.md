@@ -1,9 +1,8 @@
-<img src="https://user-images.githubusercontent.com/67713820/209890826-96c8d88e-98b5-4e4b-b59f-d8b0e853287a.png"><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/67713820/209890826-96c8d88e-98b5-4e4b-b59f-d8b0e853287a.png"><br></p>
 
-<p align="center">
-<h2>This app serves as a RESTful API to access data from My Adventures database </h2>
-    <br> 
-</p>
+
+## This app serves as a RESTful API to access data from My Adventures database
+
 
 ----------
 
@@ -11,9 +10,9 @@
 
 - [Packages](#packages)
 - [Folder Structure](#folder_structure)
+- [Schema](#schema)
 - [Setup](#setup)
 - [API Documents](#api-docs)
-- [Schema](#schema)
 - [Contributor](#contributor)
 
 ----------
@@ -29,6 +28,7 @@
 - [Swagger UI Express](https://swagger.io/docs/open-source-tools/swagger-ui/usage/installation/)
 - [nodemon](https://nodemon.io/)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+
 ----------
 ## 📂 Folder Structure <a name = "folder_structure"></a>
 - `src/api` controllers, daos, models, reqBody validation, routes, & services
@@ -36,6 +36,10 @@
 - `src/db` migration, seed, & seed source data
 - `src/docs` postman import API docs
 - `src/utils` logger & swagger setup
+
+----------
+## 🗺 Schema  <a name = "schema"></a>
+![csa-schema](https://user-images.githubusercontent.com/67713820/209966291-29992855-b2c0-4401-86ae-29720e39fb08.png)
 
 ----------
 ## 💻 Setup  <a name = "setup"></a>
@@ -62,10 +66,6 @@
 
 1. In `src.db/sources` you'll find files that can be used for seeding the database. Make sure that the database and its tables were created before executing the seed script. 
 2. You can now load the script via a npm command: `npm run seed`. 
-
-----------
-## 🗺 Schema  <a name = "schema"></a>
-![csa-schema](https://user-images.githubusercontent.com/67713820/209966291-29992855-b2c0-4401-86ae-29720e39fb08.png)
 
 ----------
 ## 💼 API Documentation  <a name = "api-docs"></a>
