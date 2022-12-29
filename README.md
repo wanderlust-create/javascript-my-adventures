@@ -31,10 +31,11 @@
 - [dotenv](https://www.npmjs.com/package/dotenv)
 ----------
 ## 📂 Folder Structure <a name = "folder_structure"></a>
-- `src/api` models, routers, controllers, services, daos & reqBody Validation
-- `src/config` access to .env configuration files & db access
-- `src/db` migration, seed, & seed data
-- `src/utils` logger, swagger setup, & swagger docs,
+- `src/api` Controllers, daos, models, reqBody Validation, routes, & services
+- `src/config` databse access & access to .env configuration variables
+- `src/db` migration, seed, & seed source data
+- `src/docs` postman import API docs
+- `src/utils` logger & setup
 
 ----------
 ## 💻 Setup  <a name = "setup"></a>
