@@ -5,7 +5,7 @@ class User extends Model {
     return "user";
   }
   static get relationMappings() {
-    const Cities = require("./cities");
+    const City = require("./cities");
     return {
       city: {
         relation: Model.ManyToManyRelation,

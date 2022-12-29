@@ -6,13 +6,13 @@ class userCity extends Model {
   }
 
   static get relationMappings() {
-    const Users = require("./users");
-    const Cities = require("./cities");
+    const User = require("./users");
+    const City = require("./cities");
     return {
       user: {
         relation: Model.HasOneRelation,
-        modelClass: Users,
-        filter: (query) => query.select("id", "firstName", "lastName"),
+        modelClass: User,
+        filter: (query) => query.select("id", "email", "firstName", "lastName"),
         join: {
           from: "userCity.userId",
           to: "user.id",
@@ -20,8 +20,8 @@ class userCity extends Model {
       },
       city: {
         relation: Model.HasOneRelation,
-        modelClass: Cities,
-        filter: (query) => query.select("id", "name"),
+        modelClass: City,
+        filter: (query) => query.select("id", "name", "country"),
         join: {
           from: "userCity.cityId",
           to: "city.id",

@@ -1,5 +1,5 @@
 const express = require("express");
-const setupDb = require("./utils/db-setup");
+const setupDb = require("./config/db-setup");
 
 // load winston logger
 const logger = require("./utils/logger");
